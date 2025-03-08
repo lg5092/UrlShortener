@@ -1,0 +1,385 @@
+{
+  "version": "39.0.0",
+  "artifacts": {
+    "UrlShortenerStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "UrlShortenerStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "UrlShortenerStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "UrlShortenerStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7eb31937e741753feb8496541387eed808d08e9d4094997a0af20ee26e32e905.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "UrlShortenerStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "UrlShortenerStack.assets"
+      ],
+      "metadata": {
+        "/UrlShortenerStack/UrlsTable": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "partitionKey": {
+                "name": "*",
+                "type": "S"
+              },
+              "billingMode": "PAY_PER_REQUEST"
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlsTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlsTable60368425"
+          }
+        ],
+        "/UrlShortenerStack/UrlsTable/ScalingRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerFunction": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "runtime": "*",
+              "handler": "*",
+              "code": "*",
+              "environment": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addEnvironment": [
+                "*",
+                "*"
+              ]
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerFunction/ServiceRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "assumedBy": {
+                "principalAccount": "*",
+                "assumeRoleAction": "*"
+              },
+              "managedPolicies": [
+                {
+                  "managedPolicyArn": "*"
+                }
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addToPrincipalPolicy": [
+                {}
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachInlinePolicy": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachInlinePolicy": [
+                "*"
+              ]
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerFunction/ServiceRole/ImportServiceRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerFunctionServiceRole2FBF9CDA"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerFunction/ServiceRole/DefaultPolicy": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachToRole": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachToRole": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addStatements": [
+                {}
+              ]
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerFunctionServiceRoleDefaultPolicy7208731A"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerFunctionB5E87AC1"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "restApiName": "*"
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApi1FE619BE"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Deployment": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "description": "*",
+              "api": "*",
+              "retainDeployments": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addToLogicalId": [
+                {}
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addToLogicalId": [
+                {}
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addToLogicalId": [
+                {}
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addToLogicalId": [
+                {}
+              ]
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApiDeployment97FF78294e037b12fa75e6e82291ec35a07057ba"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/DeploymentStage.prod": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "deployment": "*"
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApiDeploymentStageprod9A3CCA44"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApiEndpoint23405F0E"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/shorten": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "parent": "*",
+              "pathPart": "*"
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/shorten/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApishorten314FCD05"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/shorten/POST": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "resource": "*",
+              "httpMethod": "*",
+              "integration": "*",
+              "options": "*"
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/shorten/POST/ApiPermission.UrlShortenerStackUrlShortenerApi99CFE267.POST..shorten": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApishortenPOSTApiPermissionUrlShortenerStackUrlShortenerApi99CFE267POSTshorten0183C4B7"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/shorten/POST/ApiPermission.Test.UrlShortenerStackUrlShortenerApi99CFE267.POST..shorten": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApishortenPOSTApiPermissionTestUrlShortenerStackUrlShortenerApi99CFE267POSTshortenC50729ED"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/shorten/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApishortenPOST70F195C0"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/{shortCode}": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "parent": "*",
+              "pathPart": "*"
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/{shortCode}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApishortCode927BD8E8"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/{shortCode}/GET": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "resource": "*",
+              "httpMethod": "*",
+              "integration": "*",
+              "options": "*"
+            }
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/{shortCode}/GET/ApiPermission.UrlShortenerStackUrlShortenerApi99CFE267.GET..{shortCode}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApishortCodeGETApiPermissionUrlShortenerStackUrlShortenerApi99CFE267GETshortCode7B63D540"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/{shortCode}/GET/ApiPermission.Test.UrlShortenerStackUrlShortenerApi99CFE267.GET..{shortCode}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApishortCodeGETApiPermissionTestUrlShortenerStackUrlShortenerApi99CFE267GETshortCode94ADB5FC"
+          }
+        ],
+        "/UrlShortenerStack/UrlShortenerApi/Default/{shortCode}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UrlShortenerApishortCodeGETAD495B0F"
+          }
+        ],
+        "/UrlShortenerStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/UrlShortenerStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/UrlShortenerStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/UrlShortenerStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "UrlShortenerStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
